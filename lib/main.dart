@@ -263,3 +263,62 @@ class BuyLastOrder extends StatelessWidget {
 List<String> moneyaddlist = ["\$5", "\$25", "\$50"];
 
 
+class NotificationsN extends StatelessWidget {
+SizedBox onalti = SizedBox(height: 16,);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body:SafeArea(
+        child: Center(child: Column(children: [
+          starbucksBar(),
+          NeuHome(child: Column(
+                  children: [
+                    NeumorphicIcon(Icons.notifications, style: NeumorphicStyle(color:Color(0xFF00754A), depth:4  ),size: 80 , ),
+                  ],
+                            ), paddingsize: 60) ,
+          onalti,
+          textNeum(text: "Notifications", depth: 2, size: 30),
+           onalti,
+        Divider(thickness: 2,),
+        
+          onalti,
+          Column(children: List.generate(notfs.length, (index) {
+            return  NewNotf(content: notfs[index]);
+          }),)          
+        ],),),
+      ),
+    );
+  }
+}
+
+class MenuPage extends StatelessWidget {
+SizedBox onalti = SizedBox(height: 16,);
+TextStyle menuText = TextStyle(fontWeight: FontWeight.w700,fontSize: 15);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body:SafeArea(
+        child: Center(child: Column(children: [
+          starbucksBar(),
+          NeuHome(child: Column(
+                  children: [
+                    NeumorphicIcon(Icons.settings, style: NeumorphicStyle(color:Color(0xFF00754A), depth:4  ),size: 80 , ),
+                  ],
+                            ), paddingsize: 60) ,
+          onalti,
+          textNeum(text: "Menu", depth: 2, size: 30),
+           
+        
+          onalti,
+          Column(children: List.generate(menuopt.length, (index) {
+            return MenuOpt(style: menuText, content: menuopt[index])
+          ;}),)       
+        ],),),
+      ),
+      
+    );
+  }
+}
+

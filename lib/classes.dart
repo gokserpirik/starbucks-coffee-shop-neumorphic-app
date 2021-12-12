@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterikisekiz/main.dart';
 import 'package:get/get.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
@@ -106,11 +107,13 @@ class starbucksBar extends StatelessWidget {
                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                  children: [
                   
-                   NeuCircle(icon: Icons.menu,iconsize: 24, paddingsize: 12,),
+                   InkWell(onTap: ()=> Get.to(MenuPage()),
+                     child: NeuCircle(icon: Icons.menu,iconsize: 24, paddingsize: 12,)),
                    
                    Text("STARBUCKS", style: TextStyle(color: Color(0xFF231F20), fontWeight: FontWeight.w800, fontSize: 25),),
 
-                  NeuCircle(icon: Icons.notifications,iconsize: 24, paddingsize: 12,),
+                  InkWell(onTap:()=>Get.to(NotificationsN()) ,
+                    child: NeuCircle(icon: Icons.notifications,iconsize: 24, paddingsize: 12,)),
 
                  ],
                ),
@@ -118,3 +121,65 @@ class starbucksBar extends StatelessWidget {
   }
 }
 
+
+class NewNotf extends StatefulWidget {
+   final String content ;
+  const NewNotf({ Key? key, required this.content }) : super(key: key);
+
+  @override
+  _NewNotfState createState() => _NewNotfState();
+}
+
+class _NewNotfState extends State<NewNotf> {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: CardN(child: SizedBox(
+                width: 400,
+                height: 50,
+                child: Center(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 010.0),
+                    child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                      NeuCircle(icon: Icons.notifications, iconsize: 20, paddingsize: 10),
+                      Text(widget.content, style: TextStyle(fontSize: 14,color: Colors.black,fontWeight: FontWeight.w700),)
+                      ,NeumorphicIcon(Icons.navigate_next, style: NeumorphicStyle(color: Colors.black), size: 30,)
+
+                    ],),
+                  ),
+                ),
+              ), paddingsize: 5),
+    );
+  }
+}
+
+
+ 
+
+ List notfs = ["New Coffee! Order NOW!", "You Have 1 Free Coffee: Claim NOW!",
+ "New Year Specials On Stock"];
+
+ List menuopt = ["My Account","Orders","Payment Options"];
+
+ class MenuOpt extends StatefulWidget {
+  final  TextStyle style;
+   final String content;
+   const MenuOpt({ Key? key , required this.style, required this.content}) : super(key: key);
+ 
+   @override
+   _MenuOptState createState() => _MenuOptState();
+ }
+ 
+ class _MenuOptState extends State<MenuOpt> {
+   @override
+   Widget build(BuildContext context) {
+     return Column(children: [
+              Divider(thickness: 2,),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Text(widget.content, style: widget.style ,),
+              )]);
+   }
+ }
