@@ -166,7 +166,8 @@ class _NewNotfState extends State<NewNotf> {
  class MenuOpt extends StatefulWidget {
   final  TextStyle style;
    final String content;
-   const MenuOpt({ Key? key , required this.style, required this.content}) : super(key: key);
+   final Widget pageroute;
+   const MenuOpt({ Key? key , required this.style, required this.content, required this.pageroute}) : super(key: key);
  
    @override
    _MenuOptState createState() => _MenuOptState();
@@ -179,7 +180,10 @@ class _NewNotfState extends State<NewNotf> {
               Divider(thickness: 2,),
               Padding(
                 padding: const EdgeInsets.all(10.0),
-                child: Text(widget.content, style: widget.style ,),
+                child: 
+                InkWell(
+                  onTap: ()=> Get.to(widget.pageroute),
+                  child: Text(widget.content, style: widget.style ,)),
               )]);
    }
  }

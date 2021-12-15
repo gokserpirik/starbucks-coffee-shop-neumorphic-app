@@ -127,6 +127,8 @@ class Naber extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+            backgroundColor:Color(0xFFF0F0F3) ,
+
       body: SafeArea(child: 
       Center(
         child: Column(
@@ -176,6 +178,8 @@ class SuccessAdd extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+            backgroundColor:Color(0xFFF0F0F3) ,
+
       body: SafeArea(child: Text("a"),),
     );
   }
@@ -242,6 +246,8 @@ class BuyLastOrder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+            backgroundColor:Color(0xFFF0F0F3) ,
+
       body: SafeArea(child: Column(
         
         children: [
@@ -269,6 +275,8 @@ SizedBox onalti = SizedBox(height: 16,);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+            backgroundColor:Color(0xFFF0F0F3) ,
+
       body:SafeArea(
         child: Center(child: Column(children: [
           starbucksBar(),
@@ -299,6 +307,8 @@ TextStyle menuText = TextStyle(fontWeight: FontWeight.w700,fontSize: 15);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+            backgroundColor:Color(0xFFF0F0F3) ,
+
       body:SafeArea(
         child: Center(child: Column(children: [
           starbucksBar(),
@@ -313,7 +323,7 @@ TextStyle menuText = TextStyle(fontWeight: FontWeight.w700,fontSize: 15);
         
           onalti,
           Column(children: List.generate(menuopt.length, (index) {
-            return MenuOpt(style: menuText, content: menuopt[index])
+            return MenuOpt(style: menuText, content: menuopt[index], pageroute: Home(),)
           ;}),)       
         ],),),
       ),
