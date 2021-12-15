@@ -190,6 +190,8 @@ class CoffeeCheck extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+            backgroundColor:Color(0xFFF0F0F3) ,
+
       body: SafeArea(child: Column(children: [
         starbucksBar(),
          NeuHome(child: Column(
